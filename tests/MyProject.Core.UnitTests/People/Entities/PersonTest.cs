@@ -14,10 +14,11 @@ namespace MyProject.Core.UnitTests.People.Entities
         [Fact]
         public void Name_ShouldNotBeEmpty()
         {
+            //ARRANGE
             var person = new Person("", VALID_EMAIL, Convert.ToDateTime(VALID_DATE_OF_BIRTH));
-
+            //ACT
             var result = person.IsValid();
-
+            //ASSERT
             Assert.False(result);
             Assert.NotNull(person.ValidationResult.Errors);
             Assert.NotEmpty(person.ValidationResult.Errors);
